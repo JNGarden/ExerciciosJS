@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Array Dinâmico</title>
+</head>
+<body>
+<h2>Adicionar Valores a um Array Dinamicamente</h2>
+<form id="form">
+    <label for="valor">Digite um valor:</label>
+    <input type="text" id="valor" name="valor">
+    <button type="button" onclick="Vetores.VetorAdicao()">Adicionar Valor</button>
+</form>
+<ol id="ordenado">
+</ol>
+
+<script>
+	class Vetores{
+		constructor(){
+			let this.vetor = [];
+		}
+		function VetorAdicao() {
+			let valor = document.getElementById('valor').valor.trim();
+			if (valor !== '') {
+				this.vetor.push(valor);
+				this.Ordenar();
+				document.getElementById('valor').valor = '';
+			} else {
+				alert('Insira um valor válido.');
+			}
+		}
+
+		function Ordenar() {
+			let ordenado = document.getElementById('ordenado');
+			ordenado.innerHTML = '';
+			this.vetor.sort();
+			this.vetor.forEach(function (valor) {
+				let liVetor = document.createElement('li');
+				liVetor.textContent = valor;
+				output.appendChild(liVetor);
+			});
+		}
+	}
+	vetorClasse = new Vetores();
+</script>
+</body>
+</html>
